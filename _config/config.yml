@@ -1,0 +1,6 @@
+---
+Name: snapshot-fluent-extensions
+---
+SilverStripe\Snapshots\Snapshot:
+  extensions:
+    - SilverStripe\FluentSnapshots\FluentSnapshot
