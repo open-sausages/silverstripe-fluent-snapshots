@@ -3,7 +3,6 @@
 
 namespace SilverStripe\FluentSnapshots;
 
-
 use SilverStripe\ORM\DataList;
 use SilverStripe\Snapshots\Snapshot;
 use SilverStripe\Snapshots\SnapshotPublishable;

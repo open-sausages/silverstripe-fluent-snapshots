@@ -3,7 +3,6 @@
 
 namespace SilverStripe\FluentSnapshots;
 
-
 use SilverStripe\ORM\DataExtension;
 use TractorCow\Fluent\Model\Locale;
 
