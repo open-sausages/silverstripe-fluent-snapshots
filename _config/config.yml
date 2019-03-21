@@ -1,6 +1,11 @@
 ---
 Name: snapshot-fluent-extensions
+After:
+  - '#snapshot-extensions'
 ---
 SilverStripe\Snapshots\Snapshot:
   extensions:
     - SilverStripe\FluentSnapshots\FluentSnapshot
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Versioned\RecursivePublishable:
+    class: SilverStripe\FluentSnapshots\FluentSnapshotPublishable
