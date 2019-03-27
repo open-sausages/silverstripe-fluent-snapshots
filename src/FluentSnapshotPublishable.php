@@ -14,12 +14,12 @@ class FluentSnapshotPublishable extends SnapshotPublishable
     /**
      * @return DataList
      */
-    public function getSnapshots()
+    public static function getSnapshots()
     {
         $list = parent::getSnapshots();
 
         return $list->filter([
-            'LocaleID' => $this->getLocaleID(),
+            'LocaleID' => static::getLocaleID(),
         ]);
     }
 
@@ -30,7 +30,7 @@ class FluentSnapshotPublishable extends SnapshotPublishable
     protected function createSnapshot($origin = null)
     {
         $snapshot = parent::createSnapshot($origin);
-        $snapshot->LocaleID = $this->getLocaleID();
+        $snapshot->LocaleID = static::getLocaleID();
 
         return $snapshot;
     }
@@ -43,7 +43,7 @@ class FluentSnapshotPublishable extends SnapshotPublishable
     {
         $query = parent::getPublishedVersionQuery($snapShotIDs);
         $query->addWhere(
-            ['LocaleID = ?' => $this->getLocaleID()]
+            ['LocaleID = ?' => static::getLocaleID()]
         );
 
         return $query;
@@ -52,7 +52,7 @@ class FluentSnapshotPublishable extends SnapshotPublishable
     /**
      * @return int
      */
-    protected function getLocaleID()
+    protected static function getLocaleID()
     {
         $locale = Locale::getCurrentLocale();
 
